@@ -274,12 +274,12 @@ function startGame(e) {
         questionsLimitSelect.classList.add('hidden');
         loadingContainer.classList.remove('hidden')
     
-        requestNewQuestions(`https://js-quiz-questions-server.vercel.app/api/questions?limit=2&theme=${theme}`)
+        requestNewQuestions(`https://js-quiz-questions-server.vercel.app/api/questions?limit=${limit}&theme=${theme}`)
         .then(()=>{
     
             if(isLoading || isError) return;
     
-            let countdown = 0;
+            let countdown = 3;
             const countdownElement = document.createElement('div');
             countdownElement.classList.add('countdown');
             welcomeScreen.appendChild(countdownElement);
@@ -319,7 +319,7 @@ function startGame(e) {
 
 //время, отведенное на каждый вопрос
 function timerForQuestions(){
-    let countdown = 5;
+    let countdown = 10;
     const countdownElement = document.createElement('div');
     countdownElement.classList.add('timer');
     optionsContainer.appendChild(countdownElement);
