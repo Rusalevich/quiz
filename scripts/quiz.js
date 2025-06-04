@@ -508,6 +508,7 @@ const deleteQuestionFromFavorites = () => {
     localStorage.setItem('favorites', stringToDelete) // засовываем новую строчку в localStorage
 }
 
+
 })
 
 

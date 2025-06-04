@@ -1,7 +1,7 @@
 
 // загрузка всех вопросов из избранного
 
-const favoriteQuestions = JSON.parse(localStorage.getItem('favorites')) || [];
+let favoriteQuestions = JSON.parse(localStorage.getItem('favorites')) || [];
 
 const favoritesContainer = document.getElementById('favoritesContainer');
 const favoriteTemplate = document.getElementById('favoriteTemplate');
@@ -29,7 +29,8 @@ function renderFavoriteQuestions(){
                 })
                 const stringToDelete = JSON.stringify(newFavorite); 
                 localStorage.setItem('favorites', stringToDelete) ;
-                location.reload() 
+                favoriteQuestions = newFavorite;
+                renderFavoriteQuestions();
             })
 
             const optionDiv = document.createElement('div');
