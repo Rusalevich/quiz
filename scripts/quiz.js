@@ -118,7 +118,8 @@ continueButton.addEventListener('click', ()=>{
     currentQuestion = 0;
     page++;
     const theme = questionsThemeSelect.value;
-    requestNewQuestions(`https://js-quiz-questions-server.vercel.app/api/questions?limit=2&theme=${theme}&page=${page}`)
+    const limit = questionsLimitSelect.value;
+    requestNewQuestions(`https://js-quiz-questions-server.vercel.app/api/questions?limit=${limit}&theme=${theme}&page=${page}`)
     .then(()=>{
         continueOrExit.classList.remove("active");
         questionScreen.classList.add("active");
