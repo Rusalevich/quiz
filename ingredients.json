@@ -1,0 +1,63 @@
+[
+    {   
+        "name": "белый хлеб",
+        "price": 50,
+        "kcal": 150,
+        "id": "whiteBread",
+        "type": "bread"
+    },
+    {   "name": "хлеб с кунжутом",
+        "price": 40,
+        "kcal": 120,
+        "id": "sesameBread",
+        "type": "bread"
+        },
+    {   "name": "говяжья котлета",
+        "price": 100,
+        "kcal": 300,
+        "id": "beefСutlet",
+        "type": "meat"
+        }, 
+    {   "name": "куриная котлета",
+        "price": 80,
+        "kcal": 250,
+        "id": "chickenСutlet",
+        "type": "meat"
+        }, 
+    {   "name": "рыбная котлета",
+        "price": 90,
+        "kcal": 270,
+        "id": "fishСutlet",
+        "type": "meat"
+        }, 
+    {   "name": "веганская котлета",
+        "price": 70,
+        "kcal": 200,
+        "id": "veganСutlet",
+        "type": "meat"
+        }, 
+    {   "name": "помидор",
+        "price": 20,
+        "kcal": 15,
+        "id": "tomato",
+        "type": "vegetables"
+        }, 
+    {   "name": "огурец",
+        "price": 15,
+        "kcal": 10,
+        "id": "cucumber",
+        "type": "vegetables"
+        }, 
+    {   "name": "салат",
+        "price": 10,
+        "kcal": 5,
+        "id": "salad",
+        "type": "vegetables"
+        }, 
+    {   "name": "лук",
+        "price": 10,
+        "kcal": 5,
+        "id": "onion",
+        "type": "vegetables"
+        } 
+]

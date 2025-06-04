@@ -1,0 +1,215 @@
+
+:root {
+    --color-background: #efde9c;
+    --color-text: #000000;
+    --color-nav-background: #727272;
+    --color-box-shadow: #00000042;
+    --color-heading: #000000;
+    --color-heading-h3: #727272;
+    --color-primary: #000000;
+    --color-primary-dark: #b92929;
+    --color-border-light: #ddd;
+    --color-border-lighter: #eee;
+    --color-bg-light: #f6f6f6;
+    --color-selected-border: #b92929;
+    --color-selected-bg: #ebf5fb;
+    --color-correct-border: #364d36;
+    --color-correct-bg: #cdded4;
+    --color-incorrect-border: #9e2719;
+    --color-incorrect-bg: #eadddc;
+    --color-correct-text: #72907e;
+    --color-incorrect-text: #5a1911;
+    --color-button: white;
+}
+
+*{
+    font-size: 25px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.poiret-one-regular {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.title{
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+nav{
+    background-color:  var(--color-nav-background);
+    color: var(--color-bg-light);
+    border-radius: 10px 10px 0px 0px; 
+    width: 350px;
+    height: 50px;
+    
+
+    ul{
+        list-style: none;
+        display: flex;
+        margin: 0 ;
+        padding: 0;
+        height: 100%; 
+        box-sizing: border-box;
+        cursor: pointer;
+        align-items: center;
+
+
+        .active{
+            background-color: var(--color-bg-light);
+            border-radius: 10px 10px 0px 0px;
+            padding: 0 0 10px 0;
+            height: 60px;
+        }
+        li{
+            width: 50%;
+            /* height: 100%; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+
+            .a_active{
+                color: var(--color-nav-background);
+            }
+            
+            a{
+                text-decoration: none;
+                color: var(--color-bg-light);
+
+                &:hover{
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+}
+
+.quizPage{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+    align-self: flex-start;
+    padding-top: 50px;
+}
+
+h1 {
+    color: var(--color-heading);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0px;
+}
+
+ h3 {
+    color: var(--color-heading-h3);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+
+.quizContainer {
+    width: 80vw;
+    background-color: var(--color-bg-light);
+    border-radius: 0 10px 10px 10px;
+    box-shadow: 0 0 20px var(--color-box-shadow);
+    overflow: hidden;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--color-border-light);
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s;
+
+    &:focus {
+        border-color: var(--color-primary);
+    }
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border-light);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+
+    &:focus {
+        border-color: var(--color-primary);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid var(--color-border-lighter);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        border-color: var(--color-bg-light);
+    }
+
+    &.correct {
+        border-color: var(--color-correct-border);
+        background-color: var(--color-correct-bg);
+    }
+    &.incorrect {
+        border-color: var(--color-incorrect-border);
+        background-color: var(--color-incorrect-bg);
+    }
+}
+
+.btn {
+    /* display: inline-block; */
+    background-color: var(--color-primary);
+    color:var(--color-button);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+    
+
+    &:hover {
+        background-color: var(--color-primary-dark);
+    }
+}

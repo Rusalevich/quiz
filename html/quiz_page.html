@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/style_quiz.css">
+    <link rel="stylesheet" href="/style/common.css">
+</head>
+<body>
+    <div class="quizPage">
+    <div>
+        <nav>
+            <ul>
+                <li class="active"><a href="quiz_page.html" class="a_active">ГЛАВНАЯ</a></li>
+                <li ><a href="favorites.html" >ИЗБРАННОЕ</a></li>
+            </ul>
+        </nav>
+    <div class="quizContainer">
+        
+        
+<!-- окно приветствия -->
+
+          <section id="welcomeScreen" class="quizSection active"> 
+            <h1>ДОБРО ПОЖАЛОВАТЬ</h1>
+            <button class="btn" id="showAdminForm">Показать форму администратора</button>
+            <form id="adminForm" class="adminForm hidden">
+                <select name="action" id="adminAction" class="choice">
+                    <option value="post">создайте (POST)</option>
+                    <option value="put">обновите (PUT)</option>
+                    <option value="patch">частично обновите (PATCH)</option>
+                    <option value="delete">удалите (DELETE)</option>
+                </select>
+                <input type="text" id="questionInput" placeholder="вопрос">
+                <div class="allOptions">
+                    <input type="text" id="option1" placeholder="1 вариант ответа">
+                    <input type="text" id="option2" placeholder="2 вариант ответа">
+                    <input type="text" id="option3" placeholder="3 вариант ответа">
+                    <input type="text" id="option4" placeholder="4 вариант ответа">
+                </div>
+                <input type="number" id="correctAnswer" placeholder="правильный вариант">
+                <input type="text" id="explanation" placeholder="объяснение">
+                <input type="text" id="theme" placeholder="тема (js, html, css)">
+                <button class="btn">отправить</button>
+            </form>
+            <form id="playerForm">
+                <div class="formGroup">
+                    <label for="playerName">Введите ваше имя</label>
+                    <input id="playerName" name="=playerName" required>
+                </div>
+                <select name="theme" id="questionsThemeSelect" class="choice " required>
+                    <option value="html" class="choice" selected>HTML</option>
+                    <option value="css" class="choice">CSS</option>
+                    <option value="js" class="choice">JavaScript</option>
+                </select>
+                <select name="limit" id="questionsLimitSelect" class="choice" required>
+                    <option value="10" class="choice" selected>10 вопросов</option>
+                    <option value="20" class="choice">20 вопросов</option>
+                    <option value="50" class="choice">50 вопросов</option>
+                </select>
+                <button type="submit" id="startButton" class="btn">начать</button>
+                <button type="submit" id="rebootButton" class="btn hidden">перезапустить</button>
+                <div class="loadingContainer hidden">
+                    <div class="loading">
+                            <div class="loadingCoverCircle" id="loadingCoverCircle-1"></div>
+                            <div class="loadingCoverCircle" id="loadingCoverCircle-2"></div>
+                            <div class="loadingCoverCircle" id="loadingCoverCircle-3"></div>
+                        
+                    </div>
+                </div> 
+            </form>
+         </section>
+
+<!-- окно с вопросом -->
+
+         <section id="questionScreen" class="quizSection">
+
+<!-- игрок: имя    вопросов: 1 из 5   счет: 0 -->
+            <div class="quizHeader">
+                <div class="playerInfo">
+                    <span>игрок: 
+                        <span id="currentPlayer">name</span>
+                    </span>
+                </div>
+                <div class="quisProgress">
+                    <span>вопрос: 
+                        <span id="currentQuestion">1</span>
+                        из
+                        <span id="totalQuestions">5</span>
+                    </span>
+                </div>
+                <div class="quisScore">
+                    <span>счет: 
+                        <span id="currentScore">0</span>
+                    </span>
+                </div>
+                <!-- Добавить вопрос в избранное -->
+                <div class = "favoriteToggle ">
+                    <span class="addFavorite" id="favoriteHeart">❤</span>
+                    <!-- <span class="addedFavorite hidden">❤</span> -->
+                </div>
+            </div>
+<!-- контейнер с вопросом и вариантами ответов -->
+            <div id="questionContainer">
+                <h3 id="questionText">какой-то вопрос</h3>
+                <div id="optionsContainer">
+                   <!-- варианты ответа будут генериться автоматически -->
+                </div>
+                <!-- <div class="timer">00:30
+
+                </div> -->
+            </div>
+
+<!-- секция, где говорят верно ответили или нет -->
+            <div id="feedbackContainer" class="hidden">
+                <p id="feedbackText"> какой=то текст</p>
+                <button id="nextButton" class="btn">далее</button>
+            </div>
+ 
+        </section>
+<!-- даем выбрать: продолжить или закончить квиз -->
+         <div id="continueOrExit" class="quizSection">
+            <h3>Вы ответили на все вопросы</h3>
+            <p>если хотите, можете продолжить</p>
+            <div class="continueOrExitOptions">
+                <button id="continueButton" class="btn">продолжить</button>
+                <button id="exitButton" class="btn">закончить</button>
+            </div>
+         </div>
+         <!-- <div id="continueQuiz">
+            <h2>вы можете выбрать ту же тему или новую</h2> 
+            <div class="continueOrExitOptions">
+                <select name="limit" id="questionsLimitSelect" class="choice" required>
+                    <option  value="select" class="choice" selected>количество вопросов</option>
+                    <option value="10" class="choice" >10 вопросов</option>
+                    <option value="20" class="choice">20 вопросов</option>
+                    <option value="50" class="choice">50 вопросов</option>
+                </select>
+                <select name="theme" id="questionsThemeSelect" class="choice " required>
+                    <option  value="select" class="choice" selected>тема</option>
+                    <option value="html" class="choice" >HTML</option>
+                    <option value="css" class="choice">CSS</option>
+                    <option value="js" class="choice">JavaScript</option>
+                </select>
+               <button class="btn">начать</button>
+            </div> -->
+            
+         <!-- </div> -->
+<!-- итоговое окно с поздравлением-->
+            
+                <section id="resultScreen" class="quizSection">
+                    <h3>результаты</h3>
+                    <div class="finalResult">
+                        <p>поздравляем, <span id="resultPlayerName">name</span>!</p>
+                        <p>ваш результат: <span id="resultScore">0</span> из <span id="resultTotal">5</span> </p>
+                        <p id="resultPerсent">50%</p>
+                    </div>
+                    <div id="resultActions">
+                        <button id="restartButton" class="btn">начать заново</button>
+                    </div>
+                </section>
+            
+    </div>
+</div>
+</div>
+
+<template id="optionTemplate">
+    <div class="option">
+        <input type="radio" name="quizOption" id="">
+        <label for=""></label>
+    </div>
+</template>
+
+<!-- <script src="/scripts/questions.js"></script> -->
+<script src="/scripts/quiz.js"></script>
+</body>
+</html>

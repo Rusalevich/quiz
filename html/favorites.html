@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="/style/favorite.css">
+    <title>Favorites questions</title>
+</head>
+<body>
+    <div class="quizPage">
+    <div>
+    <nav>
+        <ul>
+            <li><a href="quiz_page.html">ГЛАВНАЯ</a></li>
+            <li class="active"><a href="favorites.html" class="a_active">ИЗБРАННОЕ</a></li>
+        </ul>
+    </nav>
+
+    <div class="quizContainer">
+        <section id="favoritesScreen">
+            <h1>ИЗБРАННЫЕ ВОПРОСЫ</h1>
+            <div id="favoritesContainer">
+                <!-- тут будут избранные вопросы -->
+            </div>
+        </section>
+    </div>
+</div>
+    <template id="favoriteTemplate">
+        <div class="favoriteQuestion">
+            <div class="questionLine">
+            <h3 class="questionText"></h3>
+    
+            <button id="deleteButton"> 
+                <img class="deleteImg2" src="/img/quiz/Снимок экрана 2025-06-03 154743.jpg" alt="удалить вопрос из избранного">
+                <img class="deleteImg1 " src="/img/quiz/Снимок экрана 2025-06-03 154719.jpg" alt="удалить вопрос из избранного">
+              
+            </button>
+            </div>
+            <div id="optionsContainer">
+                <!-- опции будут добавлены здесь -->
+            </div>
+            <p class="correctAnswer"></p>
+            <p class="explanation"></p>
+            <p class="theme"></p>
+        </div>
+    </div>
+    </template>
+
+    <script src="/scripts/favorites.js"></script>
+
+</body>
+</html>

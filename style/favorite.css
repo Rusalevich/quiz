@@ -1,0 +1,47 @@
+:root {
+    --color-bg-light: #f6f6f6;
+}
+
+#favoritesScreen{
+   padding: 20px; 
+}
+
+p, label{
+    font-size: 20px;
+    font-family:'Poiret One'
+}
+
+.deleteImg1{
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    &:hover{
+        opacity: 0;
+    }
+}
+.deleteImg2{
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    position: absolute;
+
+    &:hover{
+      opacity: 1;
+    }
+}
+
+#deleteButton{
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-color:  var(--color-bg-light);
+    padding: 0;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.questionLine{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

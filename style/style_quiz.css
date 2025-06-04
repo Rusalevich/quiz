@@ -1,0 +1,249 @@
+
+:root {
+    --color-background: #efde9c;
+    --color-text: #000000;
+    --color-nav-background: #727272;
+    --color-box-shadow: #00000042;
+    --color-heading: #000000;
+    --color-heading-h3: #727272;
+    --color-primary: #000000;
+    --color-primary-dark: #b92929;
+    --color-border-light: #ddd;
+    --color-border-lighter: #eee;
+    --color-bg-light: #f6f6f6;
+    --color-selected-border: #b92929;
+    --color-selected-bg: #ebf5fb;
+    --color-correct-border: #364d36;
+    --color-correct-bg: #cdded4;
+    --color-incorrect-border: #9e2719;
+    --color-incorrect-bg: #eadddc;
+    --color-correct-text: #72907e;
+    --color-incorrect-text: #5a1911;
+    --color-button: white;
+}
+
+
+.choice{
+    background-color: var( --color-box-shadow);
+    color: var( --color-text);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quizSection {
+    display: none;
+    padding: 30px;
+
+    &.active {
+        display: block;
+    }
+}
+
+.formGroup {
+    margin: 30px 0 30px 0;
+    
+}
+
+label {
+    display: block;
+    font-weight: 100;
+    width: 100%;
+    cursor: pointer;
+    font-size: 20px;
+    font-family:'Poiret One'
+}
+
+
+.quizHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border-lighter);
+}
+
+#questionText {
+    font-size: 25px;
+    margin-bottom: 24px;
+    font-weight: 100;
+
+}
+
+
+#feedbackContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+
+    &.incorrect {
+        color: var(--color-incorrect-border);
+        background-color: var(--color-incorrect-bg);
+    }
+    &.correct {
+        color: var(--color-correct-border);
+        background-color: var(--color-correct-bg);
+    }
+}
+
+#feedbackText{
+    font-family:'Poiret One'
+}
+
+#continueOrExit{
+    padding: 10px;
+    text-align: center;
+}
+
+#continueQuiz{
+    padding: 10px;
+    text-align: center; 
+}
+
+.continueOrExitOptions{
+    display: flex;
+    /* gap: 10px; */
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.finalResult {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+#resultPerсent {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: var(--color-primary);
+}
+
+#resultActions {
+    text-align: center;
+}
+
+
+.fadeOut{
+   opacity: 0; 
+   /* transform: translateY(20px); */
+   transition: all 0.5s;
+}
+
+.countdown{
+    font-size: 100px;
+    color: var(--color-primary-dark);
+    text-align: center;
+
+}
+
+.timer{
+    text-align: center;
+}
+
+.loading{
+    display: flex;
+    align-self: center;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100px;
+    margin-left: 42%;
+}
+
+
+.loadingCoverCircle{
+    border: 1px solid var(--color-primary);
+    /* height: 10px;
+    width: 10px; */
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+#loadingCoverCircle-1{
+    animation-name: loading-circle-1;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#loadingCoverCircle-2{
+    animation-name: loading-circle-1;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 0.2s;
+}
+
+#loadingCoverCircle-3{
+    animation-name: loading-circle-1;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 0.4s;
+}
+
+@keyframes loading-circle-1 {
+    0%{
+        height: 1px;
+        width: 1px;
+    }
+    100%{
+        height: 10px;
+        width: 10px;
+    }
+}
+
+.favoriteToggle{
+    /* display: flex;
+    justify-content: end;  */
+
+    .addFavorite{
+        color: #d3d3d3;
+        font-size: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        animation: additionToFav 1s ease 0 1 normal none;
+        animation-play-state: running;
+
+        &:hover {
+            color: #e74c3c;
+        }
+    }
+}
+
+.addedFavorite{
+    /* border: 1px solid black;
+    height: 10px;
+    width: 10px; 
+    border-radius: 50%;
+    background-color: #000000; */
+    position: absolute;
+    
+
+    animation-name: additionToFav ; 
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+     /* animation-iteration-count: infinite;  */
+
+}
+
+@keyframes additionToFav {
+    0%{
+        color: #e74c3c;
+        margin-top: -6px;
+        position: absolute;
+        margin-left: -30px;
+        font-size: 30px;
+    }
+    100%{
+        color: #e74d3c00;
+        margin-top: -80px;
+        position: absolute;
+        font-size: 40px;
+    }
+}

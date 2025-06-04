@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger</title>
+    <link rel="stylesheet" href="/style/style_burger.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Oi&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="startPage">
+        <!-- <img class="fontimg" src="img/фон.jpg"> -->
+        <div class = "title">
+            <h1>собери свой бургер</h1>
+        </div>
+        <nav>
+            <div class="menuPictures">
+                <img class="menuPictureBread" src="/img/breadBW.png" alt="хлеб">
+                <img class="menuPictureVegetables" src="/img/vegetablesBW.png" alt="овощи">
+                <img class="menuPictureCheese" src="/img/cheeseBW.png" alt="сыр">
+                <img class="menuPictureMeat" src="/img/meatBW.png" alt="котлета">  
+            </div>
+        </nav>
+        <div class="cover coverHidden" id="addIngredients">
+            <div class="ingredientsSelectionWindow"> 
+                <div class="chooseAnIngredient">сделай свой выбор</div>
+                <ul class="ingredientsSelection">
+                </ul> 
+                <button class="ingredientsSelectionСlose" onclick='toggleAddIngredientsWindow ()'>
+                    <img class="buttonClose" src="/img/close.png" alt="Закрыть попап">
+                </button> 
+            </div> 
+        </div>
+        <div id="selectedIngredients">
+            <ul class="basket">
+
+                <!-- <li class="ingredientInBasket">
+                    <img src="img/bread/cucumber.jpg" alt="огурец">
+                    <div class="ingredientInBasketСharacteristic">
+                        <div>огурец</div>
+                        <p class="ingredientCharacteristics">150 ккал</p>
+                    </div>
+                    <div class="numberOfIngredientsInBasket">
+                        <button class="numberOfIngredients">-</button>
+                        <div class="numberOfIngredientsWindow">1...</div>
+                        <button class="numberOfIngredients">+</button>
+                    </div>
+                    <div class="ingredientPrice">20 р.</div>
+                </li> -->
+
+            </ul>
+           
+        </div>
+        <div class="wrapperFinalData">
+            <div class="finalData">
+                <div> Итого: </div>
+                <div class="finalKcal"> 0 ккал </div>
+                <div class="finalPrice"> 0 руб. </div>
+            </div>
+        </div>
+    </div>
+    <script src="/scripts/burger.js"></script>
+</body>
+</html>
