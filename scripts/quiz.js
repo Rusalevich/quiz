@@ -92,10 +92,6 @@ nextButton.addEventListener("click",()=>{
     
 });
 
-
-
-
-
 restartButton.addEventListener("click", resetQuiz) 
 
 exitButton.addEventListener('click', showResults)
@@ -511,5 +507,3 @@ const deleteQuestionFromFavorites = () => {
 
 
 })
-
-
